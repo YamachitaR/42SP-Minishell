@@ -1,1 +1,5 @@
 ignore
+./libft/*.o
+./libft/libft.a
+*.o
+minishell
