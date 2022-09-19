@@ -6,7 +6,7 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 14:45:12 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/09/11 14:45:48 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/09/14 14:21:47 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = minishell
 CC = gcc
 CFLAG = -g -Wall -Wextra -Werror
 
-SRC = main.c
+SRC = main.c check_arg.c
 
 OBJ = ${SRC:.c=.o}
 
