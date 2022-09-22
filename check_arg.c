@@ -6,11 +6,12 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 14:18:22 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/09/14 14:19:17 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/09/21 23:54:23 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
 
 void check_arg(int argc, char **argv, char **env)
 {
@@ -18,7 +19,7 @@ void check_arg(int argc, char **argv, char **env)
 	if (argc != 1)
 	{
 		ft_putendl_fd("Invalid arguments", 1);
-		exit (1);
+		exit(1);
 	}
 	if(env == NULL)
 	{
@@ -28,4 +29,4 @@ void check_arg(int argc, char **argv, char **env)
 }
 
 // check os arg(s)
-// simplemente para checar os argumento de entrada do main 
+// simplemente para checar os argumento de entrada do main
