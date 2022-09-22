@@ -6,7 +6,7 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 14:45:12 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/09/22 00:26:09 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/09/22 03:46:22 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,15 @@ all: $(NAME)
 $(NAME): $(LIBRARY) $(OBJ)
 	make -C libft
 	$(CC) $(CFLAG) $(SRC) $(LIBFT) -o $(NAME)  -lreadline
+
+
+run1: all
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --trace-children=yes --suppressions=readline.supp ./minishell
+
+run2: all
+	valgrind --leak-check=full --show-leak-kinds=all --suppressions=readline.supp ./minishell
+
+
 
 clean:
 	make -C libft clean

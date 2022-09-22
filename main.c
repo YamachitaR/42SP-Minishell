@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:46:11 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/09/22 00:18:40 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/09/22 04:03:59 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int	main(int argc, char **argv, char **env)
 	{
 		line = get_line();
 		ft_putendl_fd(line, 1);
+		if(ft_strncmp(line, "exit", 4 )==0)
+			g_on = 0;
+		free(line);
 	}
-
+	rl_clear_history();
 
 	return (0);
 }
