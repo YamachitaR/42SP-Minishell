@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:47:12 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 01:01:19 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/07 05:31:21 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,12 @@ typedef struct s_data
 	char	*line;
 	char	**env_original;
     char    **env_copy;
+	char	**split_pipe;
+	char	**split_comand;
 }	t_data;
 
 
+void command(t_data *data);
 
 void check_arg(int argc, char **argv, char **env);
 char	*get_line(void);
@@ -49,4 +52,5 @@ int	ft_execve(char **split_cmd, char **env);
 void	ft_free_strstr(char **str);
 char	**ft_strstrdup(char **src);
 size_t  ft_strstrlen(char **src);
+char **ft_split_quote(char *str, char special);
 #endif

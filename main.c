@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:46:11 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 01:02:38 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/07 01:16:53 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_data	*g_data;
 
+void initialize(char **env);
+void free_data(void);
 int	main(int argc, char **argv, char **env)
 {
 	check_arg(argc, argv, env);
@@ -21,19 +23,29 @@ int	main(int argc, char **argv, char **env)
 	while(g_data->on)
 	{
 		g_data->line = get_line();
-		ft_putendl_fd(g_data->line, 1);
-		if(ft_strncmp(g_data->line, "exit", 4 )==0)
+		if(ft_strncmp(g_data->line, "exit", 4 ) == 0 || !g_data->line)
 			g_data->on = 0;
+		else
+			command(g_data);
 		free(g_data->line);
 	}
-	rl_clear_history();
+	free_data();
+	
 
 	return (0);
 }
 
+
+void free_data(void)
+{
+	ft_free_strstr(g_data->env_copy);
+	free(g_data);
+	rl_clear_history();
+}
+
+
 void initialize(char **env)
 {
-
 	g_data = (t_data *) malloc (sizeof(t_data));
 	g_data->on = 1;
 	g_data->env_original = env;

@@ -7,18 +7,39 @@
 #include<unistd.h>
 
 #include "libft/libft.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
-    char s[100];
+
+    char **split;
+
+ char *nome;
+
 
     // printing current working directory
-    printf("%s\n", getenv("PATH"));
+    split= split_quote(nome, 'd');
+   printf("%s   ppppp\n", split[0]);
 
-    // using the command
-    chdir("");
-
-    // printing current working directory
-    printf("%s\n", getcwd(s, 100));
 
     // after chdir is executed
     return 0;
