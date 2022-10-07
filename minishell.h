@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:47:12 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 05:31:21 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:42:58 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,7 @@ void	ft_free_strstr(char **str);
 char	**ft_strstrdup(char **src);
 size_t  ft_strstrlen(char **src);
 char **ft_split_quote(char *str, char special);
+void command(t_data *data);
+int	ft_execve(char **split_cmd, char **env);
+int build(char **cmd);
 #endif
