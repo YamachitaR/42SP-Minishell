@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 02:26:42 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/07/28 18:44:43 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/10/06 23:42:33 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c\

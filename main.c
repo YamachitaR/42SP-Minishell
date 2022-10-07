@@ -3,37 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:46:11 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/09/22 04:03:59 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/07 01:02:38 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-
-int	g_on;
-
+t_data	*g_data;
 
 int	main(int argc, char **argv, char **env)
 {
-	char	*line;
-
-
-	check_arg(argc, argv,env);
-	g_on = 1;
-
-	while(g_on)
+	check_arg(argc, argv, env);
+	initialize(env);
+	while(g_data->on)
 	{
-		line = get_line();
-		ft_putendl_fd(line, 1);
-		if(ft_strncmp(line, "exit", 4 )==0)
-			g_on = 0;
-		free(line);
+		g_data->line = get_line();
+		ft_putendl_fd(g_data->line, 1);
+		if(ft_strncmp(g_data->line, "exit", 4 )==0)
+			g_data->on = 0;
+		free(g_data->line);
 	}
 	rl_clear_history();
 
 	return (0);
 }
 
+void initialize(char **env)
+{
+
+	g_data = (t_data *) malloc (sizeof(t_data));
+	g_data->on = 1;
+	g_data->env_original = env;
+	g_data->env_copy = ft_strstrdup(env);
+
+}

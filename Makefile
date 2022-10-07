@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 14:45:12 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/09/22 03:46:22 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/10/07 00:53:29 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ CC = gcc
 
 CFLAG = -g -Wall -Wextra -Werror
 
-SRC = main.c check_arg.c get_line.c
+SRC = main.c check_arg.c check_line.c \
+	ft_execve.c ft_free_strstr.c ft_strstrdup.c ft_strstrlen.c\
+	get_line.c
+	
 
 OBJ = ${SRC:.c=.o}
 
@@ -28,6 +31,10 @@ $(NAME): $(LIBRARY) $(OBJ)
 	make -C libft
 	$(CC) $(CFLAG) $(SRC) $(LIBFT) -o $(NAME)  -lreadline
 
+
+teste:
+	make -C libft
+	$(CC) teste.c $(LIBFT) -o teste
 
 run1: all
 	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --trace-children=yes --suppressions=readline.supp ./minishell

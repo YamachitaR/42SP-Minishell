@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_line.c                                         :+:      :+:    :+:   */
+/*   ft_strstrlen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/21 23:54:09 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 00:23:02 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/10/07 00:36:58 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/10/07 00:38:26 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static char	*line_pwd(void);
-
-char	*get_line(void)
+size_t  ft_strstrlen(char **src)
 {
-	char	*line;
-	char	*pwd;
+    size_t i;
 
-	pwd = line_pwd ();
-	line = readline(pwd);
-	free(pwd);
-	add_history(line);
-	if (!check_line(line))
-	{
-		free(line);
-		return (get_line ());
-	}
-	return (line);
-}
-
-
-
-static char	*line_pwd(void)
-{
-
-	return (ft_strdup("Minishell$"));
+    i  = 0;
+    while(src[i])
+        i ++;
+    return(i);
 }
