@@ -6,14 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:47:12 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 19:42:58 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/07 23:51:45 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # define EXIT_FAILURE 1
-# define EXIT_SUCESS 2
+# define EXIT_SUCESS 0
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
@@ -38,7 +38,7 @@ typedef struct s_data
 	char	**env_original;
     char    **env_copy;
 	char	**split_pipe;
-	char	**split_comand;
+	char	**split_space;
 }	t_data;
 
 

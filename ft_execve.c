@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 23:59:24 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 00:09:10 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/08 02:28:34 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	ft_execve(char **split_cmd, char **env)
 	command_path = find_command_path(path, split_cmd[0]);
 	if (command_path)
 		execve(command_path, split_cmd, env);
+	else
+		ft_putendl_fd(ft_strjoin(split_cmd[0],":command not found"), STDERR);
 	ft_free_strstr(path);
 	free(command_path);
 	return (-1);
