@@ -6,7 +6,7 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/11 14:45:12 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/10/07 19:43:16 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/10/08 04:37:04 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAG = -g -Wall -Wextra -Werror
 
-SRC = main.c build.c check_arg.c check_line.c  command.c\
+SRC = main.c auxiliar.c build.c check_arg.c check_line.c  command.c\
 	ft_execve.c ft_free_strstr.c ft_strstrdup.c ft_strstrlen.c\
 	ft_split_quote.c get_line.c\
 	

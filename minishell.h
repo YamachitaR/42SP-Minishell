@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 14:47:12 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/10/07 23:51:45 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/10/08 04:35:53 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,7 @@ char **ft_split_quote(char *str, char special);
 void command(t_data *data);
 int	ft_execve(char **split_cmd, char **env);
 int build(char **cmd);
+
+
+void print_strstr(char **str);
 #endif
